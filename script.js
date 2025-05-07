@@ -18,15 +18,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     alert(`Logged in as ${username}`);
 
-	  if (rememberCheckbox.checked) {
-    localStorage.setItem("username", username);
-    localStorage.setItem("password", password);
-    existingUserButton.style.display = "block"; // Show button if saved
-} else {
-    localStorage.removeItem("username");
-    localStorage.removeItem("password");
-    existingUserButton.style.display = "none"; // Hide button if not saved
-}
+    if (rememberCheckbox.checked) {
+      localStorage.setItem("username", username);
+      localStorage.setItem("password", password);
+      existingUserButton.style.display = "block";
+    } else {
+      localStorage.removeItem("username");
+      localStorage.removeItem("password");
+      existingUserButton.style.display = "none";
+    }
+  });
 
   // Handle existing user login
   existingUserButton.addEventListener("click", function () {
